@@ -26,27 +26,29 @@
 
 @implementation JPMockViewControllerTest
 {
-    // test fixture ivars go here
+    JPMockViewController *sut;
 }
 
-- (void)test_createMockViewController_returnsMockViewController
+- (void)setUp
 {
-    //When
-    JPMockViewController *mockViewController = [[JPMockViewController alloc] initWithMockedClass:[JPMockedViewController class]];
-   
-    //Then
-    assertThat(mockViewController, is(notNilValue()));
+     sut = [[JPMockViewController alloc] initWithMockedClass:[JPMockedViewController class]];
 }
 
 - (void)test_callToUnimplementedMethod_forwardedToMock
 {
-    //Given
-    JPMockViewController *mockViewController = [[JPMockViewController alloc] initWithMockedClass:[JPMockedViewController class]];
-    
     //When
-    [(JPMockedViewController *)mockViewController testMethod];
+    [(JPMockedViewController *)sut testMethod];
     
     //Then
-    [verify(mockViewController.mock) testMethod];
+    [verify(sut.mock) testMethod];
+}
+
+- (void)test_getView_returnsAView
+{
+    //When
+    UIView *view = sut.view;
+    
+    //Then
+    assertThat(view, is(instanceOf([UIView class])));
 }
 @end
