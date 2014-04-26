@@ -14,4 +14,6 @@
 @property (strong, nonatomic, readonly) id mock;
 
 - (id)initWithMockedClass:(Class)mockedClass;
+
+- (void)addViewControllerAndView:(UIViewController *)viewController;
 @end
