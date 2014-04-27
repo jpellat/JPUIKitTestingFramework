@@ -51,4 +51,9 @@
     [viewController didMoveToParentViewController:self];
 }
 
+- (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController
+{
+    return self.parentViewController == viewController;
+}
+
 @end
