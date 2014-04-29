@@ -11,6 +11,7 @@
 @interface JPMockView : UIView
 
 @property (strong, nonatomic, readonly) id mock;
+@property (strong, nonatomic) id viewModel;
 
 - (id)initWithMockedClass:(Class)mockedClass;
 @end

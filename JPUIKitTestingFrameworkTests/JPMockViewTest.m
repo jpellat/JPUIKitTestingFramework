@@ -43,4 +43,16 @@
     [verify(sut.mock) testMethod];
 }
 
+- (void)test_setViewModel_setsViewModel
+{
+    //Given
+    NSObject *viewModel = mock([NSObject class]);
+    
+    //When
+    [sut setViewModel:viewModel];
+    
+    //Then
+    assertThat(sut.viewModel, is(sameInstance(viewModel)));
+}
+
 @end
