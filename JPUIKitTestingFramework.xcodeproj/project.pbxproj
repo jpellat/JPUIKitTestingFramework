@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09111F53190FD8C900446DB8 /* JPMockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F52190FD8C900446DB8 /* JPMockView.m */; };
+		09111F55190FD8D900446DB8 /* JPMockViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F54190FD8D900446DB8 /* JPMockViewTest.m */; };
+		09111F59190FD91600446DB8 /* JPMockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F58190FD91600446DB8 /* JPMockedView.m */; };
 		095018BB19099AA700E6410B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018BA19099AA700E6410B /* Foundation.framework */; };
 		095018C919099AA700E6410B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018C819099AA700E6410B /* XCTest.framework */; };
 		095018CA19099AA700E6410B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018BA19099AA700E6410B /* Foundation.framework */; };
@@ -42,6 +45,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09111F51190FD8C900446DB8 /* JPMockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMockView.h; sourceTree = "<group>"; };
+		09111F52190FD8C900446DB8 /* JPMockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMockView.m; sourceTree = "<group>"; };
+		09111F54190FD8D900446DB8 /* JPMockViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMockViewTest.m; sourceTree = "<group>"; };
+		09111F57190FD91600446DB8 /* JPMockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMockedView.h; sourceTree = "<group>"; };
+		09111F58190FD91600446DB8 /* JPMockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMockedView.m; sourceTree = "<group>"; };
 		095018B719099AA700E6410B /* libJPUIKitTestingFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJPUIKitTestingFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		095018BA19099AA700E6410B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		095018BE19099AA700E6410B /* JPUIKitTestingFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JPUIKitTestingFramework-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,6 +93,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09111F56190FD8E100446DB8 /* Test helpers */ = {
+			isa = PBXGroup;
+			children = (
+				095018E319099B9A00E6410B /* JPMockedViewController.h */,
+				095018E419099B9A00E6410B /* JPMockedViewController.m */,
+				09111F57190FD91600446DB8 /* JPMockedView.h */,
+				09111F58190FD91600446DB8 /* JPMockedView.m */,
+			);
+			name = "Test helpers";
+			sourceTree = "<group>";
+		};
 		095018AE19099AA700E6410B = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +143,8 @@
 				095018E019099B1C00E6410B /* JPMockViewController.h */,
 				095018E119099B1C00E6410B /* JPMockViewController.m */,
 				095018BD19099AA700E6410B /* Supporting Files */,
+				09111F51190FD8C900446DB8 /* JPMockView.h */,
+				09111F52190FD8C900446DB8 /* JPMockView.m */,
 			);
 			path = JPUIKitTestingFramework;
 			sourceTree = "<group>";
@@ -139,9 +160,9 @@
 		095018D019099AA700E6410B /* JPUIKitTestingFrameworkTests */ = {
 			isa = PBXGroup;
 			children = (
-				095018E319099B9A00E6410B /* JPMockedViewController.h */,
-				095018E419099B9A00E6410B /* JPMockedViewController.m */,
+				09111F56190FD8E100446DB8 /* Test helpers */,
 				095018E519099B9A00E6410B /* JPMockViewControllerTest.m */,
+				09111F54190FD8D900446DB8 /* JPMockViewTest.m */,
 				095018D119099AA700E6410B /* Supporting Files */,
 			);
 			path = JPUIKitTestingFrameworkTests;
@@ -304,6 +325,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09111F53190FD8C900446DB8 /* JPMockView.m in Sources */,
 				095018E219099B1C00E6410B /* JPMockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,6 +334,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				09111F55190FD8D900446DB8 /* JPMockViewTest.m in Sources */,
+				09111F59190FD91600446DB8 /* JPMockedView.m in Sources */,
 				095018E719099B9A00E6410B /* JPMockViewControllerTest.m in Sources */,
 				095018E619099B9A00E6410B /* JPMockedViewController.m in Sources */,
 			);
