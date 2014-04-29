@@ -33,4 +33,16 @@
     return self.mock;
 }
 
+- (void)addViewControllerAndView:(UIViewController *)viewController
+{
+    [self addChildViewController:viewController];
+    [self.view addSubview:viewController.view];
+    [viewController didMoveToParentViewController:self];
+}
+
+- (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController
+{
+    return self.parentViewController == viewController;
+}
+
 @end
