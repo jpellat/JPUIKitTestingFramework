@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic, readonly) id mock;
 @property (strong, nonatomic) id viewModel;
+@property (strong, nonatomic) id delegate;
 
 - (id)initWithMockedClass:(Class)mockedClass;
 @end
