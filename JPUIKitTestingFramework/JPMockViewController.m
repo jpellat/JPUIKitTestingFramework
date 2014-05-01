@@ -56,4 +56,22 @@
     return self.parentViewController == viewController;
 }
 
+- (BOOL)isInsideViewControllerHierarchy:(UIViewController *)viewController
+{
+    BOOL isInsideViewControllerHierarchy = NO;
+    
+    UIViewController *ancestor = self.parentViewController;
+    while(ancestor)
+    {
+        if(ancestor == viewController)
+        {
+            isInsideViewControllerHierarchy = YES;
+            break;
+        }
+        
+        ancestor = ancestor.parentViewController;
+    }
+    
+    return isInsideViewControllerHierarchy;
+}
 @end

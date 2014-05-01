@@ -19,4 +19,6 @@
 
 - (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController;
 
+- (BOOL)isInsideViewControllerHierarchy:(UIViewController *)viewController;
+
 @end
