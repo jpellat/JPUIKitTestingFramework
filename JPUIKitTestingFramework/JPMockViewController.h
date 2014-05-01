@@ -15,6 +15,8 @@
 
 - (id)initWithMockedClass:(Class)mockedClass;
 - (void)addViewControllerAndView:(UIViewController *)viewController;
+- (void)addViewControllerAndView:(UIViewController *)viewController simulateAppearance:(BOOL)simulateAppearance;
 
 - (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController;
+
 @end

@@ -35,9 +35,20 @@
 
 - (void)addViewControllerAndView:(UIViewController *)viewController
 {
+    [self addViewControllerAndView:viewController simulateAppearance:NO];
+}
+
+- (void)addViewControllerAndView:(UIViewController *)viewController simulateAppearance:(BOOL)simulateAppearance
+{
     [self addChildViewController:viewController];
     [self.view addSubview:viewController.view];
     [viewController didMoveToParentViewController:self];
+
+    if(simulateAppearance)
+    {
+        [viewController viewWillAppear:YES];
+        [viewController viewDidAppear:YES];
+    }
 }
 
 - (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController
