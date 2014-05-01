@@ -10,6 +10,7 @@
 		09111F53190FD8C900446DB8 /* JPMockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F52190FD8C900446DB8 /* JPMockView.m */; };
 		09111F55190FD8D900446DB8 /* JPMockViewTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F54190FD8D900446DB8 /* JPMockViewTest.m */; };
 		09111F59190FD91600446DB8 /* JPMockedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 09111F58190FD91600446DB8 /* JPMockedView.m */; };
+		093E24591912FC5F002057C3 /* JPSyncNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 093E24581912FC5F002057C3 /* JPSyncNavigationController.m */; };
 		095018BB19099AA700E6410B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018BA19099AA700E6410B /* Foundation.framework */; };
 		095018C919099AA700E6410B /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018C819099AA700E6410B /* XCTest.framework */; };
 		095018CA19099AA700E6410B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 095018BA19099AA700E6410B /* Foundation.framework */; };
@@ -50,6 +51,8 @@
 		09111F54190FD8D900446DB8 /* JPMockViewTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMockViewTest.m; sourceTree = "<group>"; };
 		09111F57190FD91600446DB8 /* JPMockedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPMockedView.h; sourceTree = "<group>"; };
 		09111F58190FD91600446DB8 /* JPMockedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPMockedView.m; sourceTree = "<group>"; };
+		093E24571912FC5F002057C3 /* JPSyncNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPSyncNavigationController.h; sourceTree = "<group>"; };
+		093E24581912FC5F002057C3 /* JPSyncNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JPSyncNavigationController.m; sourceTree = "<group>"; };
 		095018B719099AA700E6410B /* libJPUIKitTestingFramework.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libJPUIKitTestingFramework.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		095018BA19099AA700E6410B /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		095018BE19099AA700E6410B /* JPUIKitTestingFramework-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "JPUIKitTestingFramework-Prefix.pch"; sourceTree = "<group>"; };
@@ -145,6 +148,8 @@
 				095018BD19099AA700E6410B /* Supporting Files */,
 				09111F51190FD8C900446DB8 /* JPMockView.h */,
 				09111F52190FD8C900446DB8 /* JPMockView.m */,
+				093E24571912FC5F002057C3 /* JPSyncNavigationController.h */,
+				093E24581912FC5F002057C3 /* JPSyncNavigationController.m */,
 			);
 			path = JPUIKitTestingFramework;
 			sourceTree = "<group>";
@@ -326,6 +331,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				09111F53190FD8C900446DB8 /* JPMockView.m in Sources */,
+				093E24591912FC5F002057C3 /* JPSyncNavigationController.m in Sources */,
 				095018E219099B1C00E6410B /* JPMockViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
