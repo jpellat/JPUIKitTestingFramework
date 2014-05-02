@@ -9,7 +9,8 @@
 #import "JPSyncNavigationController.h"
 
 @interface JPSyncNavigationController ()
-
+@property (strong, nonatomic) UIViewController *currentViewController;
+@property (strong, nonatomic) NSArray *controllers;
 @end
 
 @implementation JPSyncNavigationController
@@ -23,10 +24,44 @@
     return self;
 }
 
+- (void)setViewControllers:(NSArray *)viewControllers
+{
+    self.controllers = viewControllers;
+    self.currentViewController = viewControllers[viewControllers.count-1];
+}
+
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    [self addChildViewController:viewController];
-    [self.view addSubview:viewController.view];
-    [viewController didMoveToParentViewController:self];
+    self.controllers = [self.controllers arrayByAddingObject:viewController];
+    self.currentViewController = viewController;
+}
+
+- (UIViewController *)popViewControllerAnimated:(BOOL)animated
+{
+    NSMutableArray *mutableViewControllers = [self.controllers mutableCopy];
+    UIViewController* removedViewController =self.controllers[self.controllers.count-1];
+    [mutableViewControllers removeObject:removedViewController];
+    self.controllers = [mutableViewControllers copy];
+    self.currentViewController = self.controllers[self.controllers.count-1];
+    
+    return removedViewController;
+}
+
+- (void)setCurrentViewController:(UIViewController *)currentViewController
+{
+    if (_currentViewController) {
+        [_currentViewController willMoveToParentViewController:nil];
+        [_currentViewController.view removeFromSuperview];
+        [_currentViewController removeFromParentViewController];
+    }
+    
+    _currentViewController = currentViewController;
+    if(_currentViewController)
+    {
+        [self addChildViewController:_currentViewController];
+        [self.view addSubview:_currentViewController.view];
+        [_currentViewController didMoveToParentViewController:self];
+    }
+
 }
 @end
