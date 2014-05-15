@@ -12,6 +12,8 @@
 @interface JPMockViewController : UIViewController
 
 @property (strong, nonatomic, readonly) id mock;
+@property (weak, nonatomic) id delegate;
+
 
 - (id)initWithMockedClass:(Class)mockedClass;
 - (void)addViewControllerAndView:(UIViewController *)viewController;
