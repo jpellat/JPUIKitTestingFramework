@@ -56,6 +56,11 @@
     return self.parentViewController == viewController;
 }
 
+- (BOOL)hasBeenRemovedFromParentsViewController
+{
+    return !self.parentViewController;
+}
+
 - (BOOL)isInsideViewControllerHierarchy:(UIViewController *)viewController
 {
     BOOL isInsideViewControllerHierarchy = NO;

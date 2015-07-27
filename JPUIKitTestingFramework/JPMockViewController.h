@@ -20,6 +20,7 @@
 - (void)addViewControllerAndView:(UIViewController *)viewController simulateAppearance:(BOOL)simulateAppearance;
 
 - (BOOL)hasBeenAddedToParentViewController:(UIViewController *)viewController;
+- (BOOL)hasBeenRemovedFromParentsViewController;
 
 - (BOOL)isInsideViewControllerHierarchy:(UIViewController *)viewController;
 
