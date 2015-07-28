@@ -51,4 +51,57 @@
     //Then
     assertThat(view, is(instanceOf([UIView class])));
 }
+
+- (void)testSutAddedToParentVC_hasBeenAddedToParentViewController_returnYES
+{
+    //Given
+    JPMockViewController *parentViewController = [[JPMockViewController alloc] init];
+    [parentViewController addViewControllerAndView:sut];
+    
+    //When
+    BOOL isAdded = [sut hasBeenAddedToParentViewController:parentViewController];
+    
+    //Then
+    XCTAssertTrue(isAdded);
+}
+
+- (void)testSutNotAddedToParentVC_hasBeenAddedToParentViewController_returnNO
+{
+    //Given
+    JPMockViewController *parentViewController = [[JPMockViewController alloc] init];
+    
+    //When
+    BOOL isAdded = [sut hasBeenAddedToParentViewController:parentViewController];
+    
+    //Then
+    XCTAssertFalse(isAdded);
+}
+
+- (void)testSutAddedToParentVC_hasBeenRemovedFromParentsViewController_returnNO
+{
+    //Given
+    JPMockViewController *parentViewController = [[JPMockViewController alloc] init];
+    [parentViewController addViewControllerAndView:sut];
+    
+    //When
+    BOOL isRemoved = [sut hasBeenRemovedFromParentsViewController];
+    
+    //Then
+    XCTAssertFalse(isRemoved);
+}
+
+- (void)testSutAddedToParentVCAndRemoved_hasBeenRemovedFromParentsViewController_returnYES
+{
+    //Given
+    JPMockViewController *parentViewController = [[JPMockViewController alloc] init];
+    [parentViewController addViewControllerAndView:sut];
+    [sut removeFromParentViewController];
+    
+    //When
+    BOOL isRemoved = [sut hasBeenRemovedFromParentsViewController];
+    
+    //Then
+    XCTAssertTrue(isRemoved);
+}
+
 @end
