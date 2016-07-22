@@ -10,7 +10,7 @@
 
 @interface JPSyncNavigationController ()
 @property (strong, nonatomic) UIViewController *currentViewController;
-@property (strong, nonatomic) NSArray *controllers;
+@property (strong, nonatomic) NSMutableArray *controllers;
 @end
 
 @implementation JPSyncNavigationController
@@ -19,30 +19,28 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+        _controllers = [[NSMutableArray alloc] init];
     }
     return self;
 }
 
 - (void)setViewControllers:(NSArray *)viewControllers
 {
-    self.controllers = viewControllers;
+    self.controllers = [viewControllers mutableCopy];
     self.currentViewController = viewControllers[viewControllers.count-1];
 }
 
 - (void)pushViewController:(UIViewController *)viewController animated:(BOOL)animated
 {
-    self.controllers = [self.controllers arrayByAddingObject:viewController];
+    [self.controllers addObject:viewController];
     self.currentViewController = viewController;
 }
 
 - (UIViewController *)popViewControllerAnimated:(BOOL)animated
 {
-    NSMutableArray *mutableViewControllers = [self.controllers mutableCopy];
-    UIViewController* removedViewController =self.controllers[self.controllers.count-1];
-    [mutableViewControllers removeObject:removedViewController];
-    self.controllers = [mutableViewControllers copy];
-    self.currentViewController = self.controllers[self.controllers.count-1];
+    UIViewController* removedViewController =[self.controllers lastObject];
+    [self.controllers removeObject:removedViewController];
+    self.currentViewController = [self.controllers lastObject];
     
     return removedViewController;
 }
